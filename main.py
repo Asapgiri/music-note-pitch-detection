@@ -1,3 +1,5 @@
+# Originates from 'https://colab.research.google.com/github/timsainb/tensorflow2-generative-models/blob/master/8.0-NSYNTH-iterator.ipynb#scrollTo=4UJJfSPC66ni'
+
 import os
 os.add_dll_directory("C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/bin")
 import tensorflow as tf
@@ -200,8 +202,10 @@ cax = ax.matshow(np.squeeze(ex["spectrogram"].numpy()[10]), aspect='auto', origi
 fig.colorbar(cax)
 
 
-
-
+from tqdm.autonotebook import tqdm
+for batch, train_x in tqdm(
+        zip(range(1000), dset.dataset_train), total=1000):
+    continue
 
 
 
